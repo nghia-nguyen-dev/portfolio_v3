@@ -53,3 +53,11 @@ function removeCard() {
     }
 
 }
+
+
+var today = new Date();
+var hour = today.getHours() - 12;
+var minute = today.getMinutes();
+// var time = today.getHours() + ":" + today.getMinutes();
+
+const currentTime = `${hour}:${minute}`;

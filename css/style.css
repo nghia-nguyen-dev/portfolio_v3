@@ -134,20 +134,22 @@ span {
     font-family: 'Neue Haas Grotesk';
     position: absolute;
     color: var(--tan);
+    line-height: normal;
     
     background-color: black;
     border-radius: 16px;
     height: 343px;
     min-width: 232px;
-    padding-top: 32px;
-    padding-left: 14px;
+    padding-top: 36px;
+    padding-left: 16px;
     padding-right: 14px;
     z-index: 1;
     display: none;
+   
 }
 
 .card-info p {
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     cursor: pointer;
 }
 
@@ -155,7 +157,9 @@ span {
     display: block;
 }
 
-
+.social-media {
+    margin-top: 24.5px;
+}
 
 
 
