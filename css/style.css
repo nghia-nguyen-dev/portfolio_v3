@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'Druk Wide Medium';
+    src: url(../fonts/Druk-Wide-Medium.otf);
+}
+
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    src: url(../fonts/NHaasGroteskTXPro-55Rg.otf);
+}
+
+/****************************************** VARIABLES ******************************************/
+
+:root {
+    /* colors */
+    --tan: #F8F9F2;
+    --light-grey: hsl(60, 12%, 82%);
+    --dark-grey: hsl(70, 4%, 55%);
+    --black: #121409;
+
+    /* text-styles */
+    --body-txt: 18px;
+    --scroll-txt-size: clamp(40px, 6vw, 120px);
+    --letter-spacing: -1px;
+
+    /* general */
+    --span-gap: clamp(15px, 2.3vw, 40px);
+}
+
+body {
+    background-color: var(--tan);
+    font-family: 'Neue Haas Grotesk';
+    font-size: var(--body-txt);
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.scroll-grp {
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+    font-family: 'Druk Wide Medium';
+    color: var(--light-grey);
+    margin-top: clamp(60px, 10vw, 132px);
+    line-height: .8;
+  
+}
+
+.loop-container {
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 1.2vw;
+}
+
+.loop-container__text {
+    animation: textLoop 10s linear infinite;
+    font-size: var(--scroll-txt-size);
+}
+
+/* .loop-container:hover .loop-container__text {
+    animation-duration: 25s;
+} */
+
+span {
+    margin-right: var(--span-gap);
+    cursor: pointer;
+    transition: color .35s ease;
+}
+  
+.loop-container__text--backwards {
+    animation: textLoopBackwards 10s linear infinite;
+}
+  
+.loop-container--hover {
+    color: var(--black);
+}
+
+.loop-container__text,
+span {
+    pointer-events: none;
+}
+
+.selected-txt {
+    animation-play-state: paused;
+    color: var(--black);
+}
+
+.loop-container:hover {
+    color: var(--dark-grey);
+}
+
+.slow-anim {
+    animation-duration: 20s;
+}
+
+.info {
+    padding-left: 19vw;
+    padding-right: 7vw;
+    padding-top: 20px;
+    display: flex;
+    font-size: 11px;
+    justify-content: space-between;
+}
+
+.est {
+    margin-left: 8px;
+}
+
+.coordinates {
+    display: flex;
+}
+
+.coordinates p:first-child {
+    margin-right: 16px;
+}
+
+.line {
+    position: absolute;
+    left: 19vw;
+    bottom: 0;
+    width: 1px;
+    height: 12vh;
+    background-color: black;
+    transform: translateY(50%);
+}
+
+.card-info {
+  
+    letter-spacing: 0;
+    text-transform: initial;
+    font-family: 'Neue Haas Grotesk';
+    position: absolute;
+    color: var(--tan);
+    
+    background-color: black;
+    border-radius: 16px;
+    height: 343px;
+    min-width: 232px;
+    padding-top: 32px;
+    padding-left: 14px;
+    padding-right: 14px;
+    z-index: 1;
+    display: none;
+}
+
+.card-info p {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.card-active {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************** ANIMATION ******************************************/
+
+@keyframes textLoop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0)
+    }
+}
+
+@keyframes textLoopBackwards {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(-100%, 0, 0)
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+}
+
