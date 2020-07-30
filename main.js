@@ -1,19 +1,61 @@
 const scrollGrp = document.querySelector('.scroll-grp');
-const cardWork = document.querySelector('.card-info')
 
+
+
+
+// ------------------------ EVENT LISTENERS ------------------------
 
 scrollGrp.addEventListener('click', function(e) {
     
-    // prevents the scrollgrp div from being click which will select all texts
+    // prevents the scrollGrp div from being click which will select all texts
     if (e.target === scrollGrp) {
         return;
     }
 
-   
-    removeCard()
     displayCard(e);
+    selectedTextLine(e);
+
+})
+
+scrollGrp.addEventListener('mouseover', function(e) {
+    const slowTextLine = [...document.querySelectorAll('.slow-anim')];
+    if (slowTextLine.length != 0) {
+        slowTextLine.forEach(each => {
+            each.classList.remove('slow-anim')
+        })
+    }
+
+    if (e.target.className === 'loop-container') {
+        const x = [...e.target.children]
+        // console.log(x);
+        x.forEach(each => {
+            if(each.classList.contains('loop-container__text')) {
+                each.classList.add('slow-anim')
+            }
+        })
+    }
+})
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------ FUNCTIONS ------------------------
+
+
+
+function selectedTextLine (e) {
     const selectedTxt = [...document.querySelectorAll('.selected-txt')]
     selectedTxt.forEach(each => {
         each.classList.remove('selected-txt')
@@ -23,16 +65,12 @@ scrollGrp.addEventListener('click', function(e) {
     loopContainerTxts.forEach(each => {
         each.classList.add('selected-txt')
     })
-
-
-
-
-})
-
+}
 
 
 function displayCard(e) {
 
+    removeCard()
     const activeCard = e.target.lastElementChild;
     activeCard.classList.add('card-active')
 
@@ -55,9 +93,11 @@ function removeCard() {
 }
 
 
-var today = new Date();
-var hour = today.getHours() - 12;
-var minute = today.getMinutes();
+// var today = new Date();
+// var hour = today.getHours() - 12;
+// var minute = today.getMinutes();
 // var time = today.getHours() + ":" + today.getMinutes();
 
-const currentTime = `${hour}:${minute}`;
+// const currentTime = `${hour}:${minute}`;
+
+
