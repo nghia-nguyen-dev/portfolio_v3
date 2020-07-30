@@ -5,7 +5,14 @@
 
 @font-face {
     font-family: 'Neue Haas Grotesk';
+    font-weight: 400;
     src: url(../fonts/NHaasGroteskTXPro-55Rg.otf);
+}
+
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-weight: 700;
+    src: url(../fonts/NHaasGroteskTXPro-75Bd.otf);
 }
 
 /****************************************** VARIABLES ******************************************/
@@ -156,6 +163,11 @@ span {
    
 }
 
+.txt-outline {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
 .card-info p {
     margin-bottom: 2px;
     cursor: pointer;
@@ -175,7 +187,7 @@ span {
     margin-top: 24.5px;
 }
 
-p.my-name {
+h1.my-name {
     margin-bottom: 24.5px;
 }
 
@@ -187,7 +199,9 @@ p.my-name {
     opacity: .5;
 }
 
-
+h4 {
+    font-weight: 700;
+}
 
 
 

@@ -1,14 +1,13 @@
 const scrollGrp = document.querySelector('.scroll-grp');
-
+const header = document.querySelector('header')
 
 
 
 // ------------------------ EVENT LISTENERS ------------------------
 
 scrollGrp.addEventListener('click', function(e) {
-    console.log(e.target);
-    console.log(e.target.className);
-
+   console.log(e.target);
+    
     if (e.target.classList.contains('loop-container')) {
         removeCard()
         displayCard(e);
@@ -44,7 +43,9 @@ scrollGrp.addEventListener('click', function(e) {
 //     }
 // })
 
-
+// header.addEventListener('click', function(e) {
+//     console.log(e.target);
+// })
 
 
 
