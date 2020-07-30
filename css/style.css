@@ -37,6 +37,7 @@ body {
     background-color: var(--tan);
     font-family: 'Neue Haas Grotesk';
     font-size: var(--body-txt);
+    color: var(--black);
 }
 
 a {
@@ -49,6 +50,8 @@ header {
     position: relative;
     height: 100vh;
     width: 100vw;
+
+    overflow: hidden;
 }
 
 .scroll-grp {
@@ -77,7 +80,7 @@ header {
     animation-duration: 25s;
 } */
 
-span {
+.loop-container__text span {
     margin-right: var(--span-gap);
     cursor: pointer;
     transition: color .35s ease;
@@ -127,18 +130,29 @@ span {
 }
 
 .coordinates p:first-child {
-    margin-right: 16px;
+    margin-right: 32px;
 }
 
 .line {
     position: absolute;
-    left: 19vw;
+    left: 26vw;
     bottom: 0;
     width: 1px;
     height: 12vh;
     background-color: black;
     transform: translateY(50%);
 }
+
+.horizontal-line {
+    position: absolute;
+    width: 4vw;
+    height: 1px;
+    background-color: black;
+
+    right: 0;
+   
+}
+
 
 .card-info {
     cursor: initial;
@@ -172,7 +186,10 @@ span {
     margin-bottom: 2px;
     cursor: pointer;
     width: max-content;
+
+   
 }
+
 
 .card-info--about p {
     /* background-image: url('../images/skrt_skrt/01.png'); */
@@ -197,27 +214,79 @@ h1.my-name {
     bottom: 14px;
     right: 14px;
     opacity: .5;
+    transition: opacity .35s ease;
+}
+
+
+.x-icon:hover {
+    opacity: 1;
+}
+
+h2 {
+    font-family: 'Druk Wide Medium';
+    font-size: var(--scroll-txt-size);
+    position: absolute;
+    left: -3.4vw;
+  
+
+}
+
+h2,
+h4 {
+    line-height: .76;
+}
+
+.alignment {
+    display: flex;
+    align-items: flex-end;
+
+    margin-bottom: 108px;
 }
 
 h4 {
     font-weight: 700;
+    
 }
 
+main {
+    padding-top: 32vw;
+    padding-left: 26vw;
+    padding-right: 4vw;
+}
 
+.work {
+    max-width: 1200px;
+}
 
+.work__content {
+    max-width: 607px;
+    line-height: 27px;
+    margin-bottom: 324px;
+}
 
+.work__side-info {
+    margin-top: 162px;
+    display: flex;
+}
 
+.work__side-info p:first-child {
+    margin-right: 140px;
+}
 
+.work__side-info span {
+    opacity: .35;
+    margin-left: 10px;
+}
 
+.work__images img {
+    margin-bottom: 5vw;
+}
 
-
-
-
-
-
-
-
-
+main,
+.work,
+.line {
+    display: none;
+}
 
 
 

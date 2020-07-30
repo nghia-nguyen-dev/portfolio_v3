@@ -1,15 +1,21 @@
 const scrollGrp = document.querySelector('.scroll-grp');
-const header = document.querySelector('header')
+const header = document.querySelector('header');
 
+const projects = {
+    skrt: document.querySelector('.work--skrt'),
+    bfi: document.querySelector('.work--bfi'),
+}
+
+let currentProject = '';
 
 
 // ------------------------ EVENT LISTENERS ------------------------
 
 scrollGrp.addEventListener('click', function(e) {
-   console.log(e.target);
+  
     
     if (e.target.classList.contains('loop-container')) {
-        removeCard()
+        removeCard();
         displayCard(e);
         removeSelectedText();
         selectedTextLine(e);
@@ -20,6 +26,22 @@ scrollGrp.addEventListener('click', function(e) {
         removeSelectedText();
     }
    
+    if (e.target.classList.contains('card-info__work')) {
+        const main = document.querySelector('main');
+        const line = document.querySelector('.line');
+
+        main.style.display = 'block';
+        line.style.display = 'block';
+
+        Object.values(projects).forEach(proj => {
+            proj.style.display = 'none'
+        })
+        
+        const selectedWork = e.target.dataset.work;
+        projects[selectedWork].style.display = 'block'
+
+    }
+
 
 })
 
@@ -71,9 +93,9 @@ function selectedTextLine (e) {
     // })
 
 
-    const loopContainerTxts = [...e.target.children]
+    const loopContainerTxts = [...e.target.children];
     loopContainerTxts.forEach(each => {
-        each.classList.add('selected-txt')
+        each.classList.add('selected-txt');
     })
 }
 
@@ -83,29 +105,26 @@ function displayCard(e) {
     const activeCard = e.target.lastElementChild;
     activeCard.classList.add('card-active')
 
-    const mouseX = e.clientX
-    const mouseY = e.clientY
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
 
-    activeCard.style.left = `${mouseX}px`
-    activeCard.style.top = `${mouseY}px`
+    activeCard.style.left = `${mouseX}px`;
+    activeCard.style.top = `${mouseY}px`;
 
 }
 
 function removeSelectedText() {
-    const selectedTxt = [...document.querySelectorAll('.selected-txt')]
+    const selectedTxt = [...document.querySelectorAll('.selected-txt')];
     selectedTxt.forEach(each => {
-        each.classList.remove('selected-txt')
+        each.classList.remove('selected-txt');
     })
 }
 
 function removeCard() {
-
-    const activeCard = document.querySelector('.card-active')
-
+    const activeCard = document.querySelector('.card-active');
     if (activeCard) {
-        activeCard.classList.remove('card-active')
+        activeCard.classList.remove('card-active');
     }
-
 }
 
 
@@ -117,3 +136,8 @@ function removeCard() {
 // const currentTime = `${hour}:${minute}`;
 
 
+// when a project is clicked 
+
+// display main
+// display vertical line
+// display chosen project
