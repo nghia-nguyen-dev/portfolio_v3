@@ -32,6 +32,12 @@ body {
     font-size: var(--body-txt);
 }
 
+a {
+    text-decoration: none;
+    color: var(--tan);
+}
+
+
 header {
     position: relative;
     height: 100vh;
@@ -128,7 +134,8 @@ span {
 }
 
 .card-info {
-  
+    cursor: initial;
+    position: relative;
     letter-spacing: 0;
     text-transform: initial;
     font-family: 'Neue Haas Grotesk';
@@ -146,11 +153,18 @@ span {
     z-index: 1;
     display: none;
    
+   
 }
 
 .card-info p {
     margin-bottom: 2px;
     cursor: pointer;
+    width: max-content;
+}
+
+.card-info--about p {
+    /* background-image: url('../images/skrt_skrt/01.png'); */
+    cursor: initial;
 }
 
 .card-active {
@@ -161,7 +175,17 @@ span {
     margin-top: 24.5px;
 }
 
+p.my-name {
+    margin-bottom: 24.5px;
+}
 
+.x-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    opacity: .5;
+}
 
 
 

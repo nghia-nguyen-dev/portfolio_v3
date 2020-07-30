@@ -6,35 +6,43 @@ const scrollGrp = document.querySelector('.scroll-grp');
 // ------------------------ EVENT LISTENERS ------------------------
 
 scrollGrp.addEventListener('click', function(e) {
-    
-    // prevents the scrollGrp div from being click which will select all texts
-    if (e.target === scrollGrp) {
-        return;
+    console.log(e.target);
+    console.log(e.target.className);
+
+    if (e.target.classList.contains('loop-container')) {
+        removeCard()
+        displayCard(e);
+        removeSelectedText();
+        selectedTextLine(e);
     }
 
-    displayCard(e);
-    selectedTextLine(e);
+    if (e.target.classList.contains('x-icon')) {
+        removeCard();
+        removeSelectedText();
+    }
+   
 
 })
 
-scrollGrp.addEventListener('mouseover', function(e) {
-    const slowTextLine = [...document.querySelectorAll('.slow-anim')];
-    if (slowTextLine.length != 0) {
-        slowTextLine.forEach(each => {
-            each.classList.remove('slow-anim')
-        })
-    }
 
-    if (e.target.className === 'loop-container') {
-        const x = [...e.target.children]
-        // console.log(x);
-        x.forEach(each => {
-            if(each.classList.contains('loop-container__text')) {
-                each.classList.add('slow-anim')
-            }
-        })
-    }
-})
+// scrollGrp.addEventListener('mouseover', function(e) {
+//     const slowTextLine = [...document.querySelectorAll('.slow-anim')];
+//     if (slowTextLine.length != 0) {
+//         slowTextLine.forEach(each => {
+//             each.classList.remove('slow-anim')
+//         })
+//     }
+
+//     if (e.target.className === 'loop-container') {
+//         const x = [...e.target.children]
+//         // console.log(x);
+//         x.forEach(each => {
+//             if(each.classList.contains('loop-container__text') && !each.classList.contains('selected-txt')) {
+//                 each.classList.add('slow-anim')
+//             }
+//         })
+//     }
+// })
 
 
 
@@ -56,10 +64,11 @@ scrollGrp.addEventListener('mouseover', function(e) {
 
 
 function selectedTextLine (e) {
-    const selectedTxt = [...document.querySelectorAll('.selected-txt')]
-    selectedTxt.forEach(each => {
-        each.classList.remove('selected-txt')
-    })
+    // const selectedTxt = [...document.querySelectorAll('.selected-txt')]
+    // selectedTxt.forEach(each => {
+    //     each.classList.remove('selected-txt')
+    // })
+
 
     const loopContainerTxts = [...e.target.children]
     loopContainerTxts.forEach(each => {
@@ -70,7 +79,6 @@ function selectedTextLine (e) {
 
 function displayCard(e) {
 
-    removeCard()
     const activeCard = e.target.lastElementChild;
     activeCard.classList.add('card-active')
 
@@ -80,6 +88,13 @@ function displayCard(e) {
     activeCard.style.left = `${mouseX}px`
     activeCard.style.top = `${mouseY}px`
 
+}
+
+function removeSelectedText() {
+    const selectedTxt = [...document.querySelectorAll('.selected-txt')]
+    selectedTxt.forEach(each => {
+        each.classList.remove('selected-txt')
+    })
 }
 
 function removeCard() {
