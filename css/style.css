@@ -107,7 +107,7 @@ span {
 }
 
 .info {
-    padding-left: 12vw;
+    padding-left: 26vw;
     padding-right: 7vw;
     padding-top: 20px;
     display: flex;
@@ -153,7 +153,6 @@ span {
     position: absolute;
     color: var(--tan);
     line-height: normal;
-    
     background-color: black;
     border-radius: 16px;
     height: 343px;
@@ -174,10 +173,7 @@ span {
     margin-bottom: 2px;
     cursor: pointer;
     width: max-content;
-
-   
 }
-
 
 .card-info--about p {
     cursor: initial;
@@ -213,7 +209,7 @@ h2 {
     font-family: 'Druk Wide Medium';
     font-size: var(--scroll-txt-size);
     position: absolute;
-    left: -3.4vw;
+    left: -3.2vw;
 }
 
 h2,
@@ -232,7 +228,7 @@ h4 {
 }
 
 .work {
-    max-width: 1800px;
+    max-width: 1920px;
     padding-top: clamp(100px, 32vw, 375px);
     padding-left: 26vw;
     padding-right: 4vw;
@@ -247,6 +243,7 @@ h4 {
 .work__side-info {
     margin-top: 162px;
     display: flex;
+    opacity: .35;
 }
 
 .work__side-info p:first-child {
@@ -254,12 +251,15 @@ h4 {
 }
 
 .work__side-info span {
-    opacity: .35;
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 .work__images img {
     margin-bottom: 5vw;
+}
+
+.work__images img:last-child {
+    margin-bottom: 0;
 }
 
 .work,
@@ -272,33 +272,50 @@ h4 {
     height: 85px;
     width: 85px;
     display: flex;
-
     border-radius: 50%;
     position: sticky;
     top: 80vh;
     transform: translate(clamp(300px,56vw, 910px), 50%);
-  
     transition: .35s ease;
-
-    
 }
 
 .view-btn:hover {
    background-color: var(--black);
-   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
+   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
 
 .view-btn a {
     margin: auto;
-  
 }
 
+.up {
+    color: var(--black);
+   
+}
 
+/* .loop-container:hover .loop-container__text {
+    animation-duration: 20s;
+}
 
+.loop-container:hover .loop-container__text.selected-txt {
+    animation-duration: 10s;
+} */
 
+.controls {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    max-width: 1920px;
+    margin-top: 210px;
+    margin-bottom: 100px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
 
-
+.arrow {
+    cursor: pointer;
+    
+}
 
 
 
