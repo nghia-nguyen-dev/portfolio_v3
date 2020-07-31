@@ -110,13 +110,7 @@ function selectedTextLine (e) {
     })
 }
 
-
 function displayCard(e) {
-
-    
-
-    console.log(e.target.lastElementChild.offsetWidth);
-
     const activeCard = e.target.lastElementChild;
     activeCard.classList.add('card-active')
 
@@ -130,9 +124,6 @@ function displayCard(e) {
 
     activeCard.style.left = `${mouseX}px`;
     activeCard.style.top = `${mouseY}px`;
-
-
-   
 }
 
 function removeSelectedText() {
@@ -150,27 +141,6 @@ function removeCard() {
 }
 
 
-// var today = new Date();
-// var hour = today.getHours() - 12;
-// var minute = today.getMinutes();
-// var time = today.getHours() + ":" + today.getMinutes();
-
-// const currentTime = `${hour}:${minute}`;
-
-
-// when a project is clicked 
-
-// display main
-// display vertical line
-// display chosen project
-
-function getCurrentTime() {
-    const today = new Date();
-    const hour = (today.getHours() - 12) * -1;
-    const minute = today.getMinutes();
-    const timeOfDay = getPmOrAm();
-}
-
 function getPmOrAm () {
     const today = new Date();
     const hour = today.getHours();
@@ -180,3 +150,24 @@ function getPmOrAm () {
         return 'AM'
     }
 }
+
+function updateTime() {
+    const today = new Date();
+    let hour = today.getHours() - 12;
+    let minute = today.getMinutes();
+    const timeOfDay = getPmOrAm();
+
+    if (hour <= 0) {
+        hour = hour * -1;
+    }
+
+    if (minute < 10) {
+        minute = `0${minute}`
+    }
+
+    const timeZone = document.querySelector('.timezone');
+    timeZone.innerHTML = `${hour}:${minute} ${timeOfDay}<span class="est">EST</span>`
+}
+
+updateTime();
+setInterval(updateTime, 60000);
