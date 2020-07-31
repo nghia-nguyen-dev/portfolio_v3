@@ -162,6 +162,8 @@ span {
     padding-right: 14px;
     z-index: 1;
     display: none;
+
+    box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.2);
 }
 
 .txt-outline {
