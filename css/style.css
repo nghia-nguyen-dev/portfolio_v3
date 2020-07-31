@@ -15,6 +15,7 @@
     src: url(../fonts/NHaasGroteskTXPro-75Bd.otf);
 }
 
+
 /****************************************** VARIABLES ******************************************/
 
 :root {
@@ -45,12 +46,10 @@ a {
     color: var(--tan);
 }
 
-
 header {
     position: relative;
     height: 100vh;
     width: 100vw;
-
     overflow: hidden;
 }
 
@@ -61,7 +60,6 @@ header {
     color: var(--light-grey);
     margin-top: clamp(60px, 10vw, 132px);
     line-height: .8;
-  
 }
 
 .loop-container {
@@ -75,10 +73,6 @@ header {
     animation: textLoop 10s linear infinite;
     font-size: var(--scroll-txt-size);
 }
-
-/* .loop-container:hover .loop-container__text {
-    animation-duration: 25s;
-} */
 
 .loop-container__text span {
     margin-right: var(--span-gap);
@@ -113,7 +107,7 @@ span {
 }
 
 .info {
-    padding-left: 19vw;
+    padding-left: 12vw;
     padding-right: 7vw;
     padding-top: 20px;
     display: flex;
@@ -138,9 +132,8 @@ span {
     left: 26vw;
     bottom: 0;
     width: 1px;
-    height: 12vh;
+    height: 7vh;
     background-color: black;
-    transform: translateY(50%);
 }
 
 .horizontal-line {
@@ -148,11 +141,8 @@ span {
     width: 4vw;
     height: 1px;
     background-color: black;
-
     right: 0;
-   
 }
-
 
 .card-info {
     cursor: initial;
@@ -173,8 +163,6 @@ span {
     padding-right: 14px;
     z-index: 1;
     display: none;
-   
-   
 }
 
 .txt-outline {
@@ -192,7 +180,6 @@ span {
 
 
 .card-info--about p {
-    /* background-image: url('../images/skrt_skrt/01.png'); */
     cursor: initial;
 }
 
@@ -227,8 +214,6 @@ h2 {
     font-size: var(--scroll-txt-size);
     position: absolute;
     left: -3.4vw;
-  
-
 }
 
 h2,
@@ -239,23 +224,18 @@ h4 {
 .alignment {
     display: flex;
     align-items: flex-end;
-
     margin-bottom: 108px;
 }
 
 h4 {
     font-weight: 700;
-    
-}
-
-main {
-    padding-top: 32vw;
-    padding-left: 26vw;
-    padding-right: 4vw;
 }
 
 .work {
-    max-width: 1200px;
+    max-width: 1800px;
+    padding-top: clamp(100px, 32vw, 375px);
+    padding-left: 26vw;
+    padding-right: 4vw;
 }
 
 .work__content {
@@ -282,15 +262,39 @@ main {
     margin-bottom: 5vw;
 }
 
-main,
 .work,
 .line {
     display: none;
 }
 
+.view-btn {
+    background-color: var(--light-grey);
+    height: 85px;
+    width: 85px;
+    display: flex;
 
+    border-radius: 50%;
+    position: sticky;
+    top: -20px;
+    transform: translate(clamp(300px,54vw, 910px), 50%);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    transition: .35s ease;
 
+    
+}
 
+.view-btn:hover {
+   background-color: var(--black);
+}
+
+.view-btn:hover a {
+    color: var(--tan);
+}
+
+.view-btn a {
+    margin: auto;
+    color: var(--black);
+}
 
 
 

@@ -1,19 +1,15 @@
 const scrollGrp = document.querySelector('.scroll-grp');
 const header = document.querySelector('header');
 
-const projects = {
-    skrt: document.querySelector('.work--skrt'),
-    bfi: document.querySelector('.work--bfi'),
-}
+const projects = [...document.querySelectorAll('.work')]
 
-let currentProject = '';
+let counter = '';
 
 
 // ------------------------ EVENT LISTENERS ------------------------
 
 scrollGrp.addEventListener('click', function(e) {
   
-    
     if (e.target.classList.contains('loop-container')) {
         removeCard();
         displayCard(e);
@@ -27,71 +23,38 @@ scrollGrp.addEventListener('click', function(e) {
     }
    
     if (e.target.classList.contains('card-info__work')) {
-        const main = document.querySelector('main');
-        const line = document.querySelector('.line');
-
-        main.style.display = 'block';
-        line.style.display = 'block';
-
-        Object.values(projects).forEach(proj => {
-            proj.style.display = 'none'
-        })
-        
-        const selectedWork = e.target.dataset.work;
-        projects[selectedWork].style.display = 'block'
-
+        displayMainAndLine();
+        removeProject();
+        displayProject(e);
     }
-
 
 })
 
 
-// scrollGrp.addEventListener('mouseover', function(e) {
-//     const slowTextLine = [...document.querySelectorAll('.slow-anim')];
-//     if (slowTextLine.length != 0) {
-//         slowTextLine.forEach(each => {
-//             each.classList.remove('slow-anim')
-//         })
-//     }
-
-//     if (e.target.className === 'loop-container') {
-//         const x = [...e.target.children]
-//         // console.log(x);
-//         x.forEach(each => {
-//             if(each.classList.contains('loop-container__text') && !each.classList.contains('selected-txt')) {
-//                 each.classList.add('slow-anim')
-//             }
-//         })
-//     }
-// })
-
-// header.addEventListener('click', function(e) {
-//     console.log(e.target);
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ------------------------ FUNCTIONS ------------------------
 
+function displayMainAndLine() {
+    const main = document.querySelector('main');
+    const line = document.querySelector('.line');
+    main.style.display = 'block';
+    line.style.display = 'block';
+}
+
+function removeProject() {
+
+    projects.forEach(proj => {
+        proj.style.display = '';
+    })
+}
+
+function displayProject(e) {
+    const currentProject = parseInt(e.target.dataset.project) - 1;
+    counter = currentProject;
+    projects[currentProject].style.display = 'block';
+}
 
 
 function selectedTextLine (e) {
-    // const selectedTxt = [...document.querySelectorAll('.selected-txt')]
-    // selectedTxt.forEach(each => {
-    //     each.classList.remove('selected-txt')
-    // })
-
 
     const loopContainerTxts = [...e.target.children];
     loopContainerTxts.forEach(each => {
