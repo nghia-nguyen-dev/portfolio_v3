@@ -268,16 +268,16 @@ h4 {
 }
 
 .view-btn {
-    background-color: var(--light-grey);
+    background-color: var(--black);
     height: 85px;
     width: 85px;
     display: flex;
 
     border-radius: 50%;
     position: sticky;
-    top: -20px;
-    transform: translate(clamp(300px,54vw, 910px), 50%);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    top: 80vh;
+    transform: translate(clamp(300px,56vw, 910px), 50%);
+  
     transition: .35s ease;
 
     
@@ -285,15 +285,13 @@ h4 {
 
 .view-btn:hover {
    background-color: var(--black);
+   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
-.view-btn:hover a {
-    color: var(--tan);
-}
 
 .view-btn a {
     margin: auto;
-    color: var(--black);
+  
 }
 
 
