@@ -5,6 +5,7 @@ const controls = document.querySelector('.controls');
 const projects = [...document.querySelectorAll('.work')]
 
 let counter = '';
+let isDone = false;
 
 // ------------------------ INIT ------------------------
 
@@ -30,6 +31,10 @@ scrollGrp.addEventListener('click', function(e) {
     }
    
     if (e.target.classList.contains('card-info__work')) {
+        if (isDone === false) {
+            introAnim();
+            isDone = true
+        }
         displayMainAndLine();
         removeProject();
         displayProject(e);
@@ -161,3 +166,29 @@ function updateTime() {
     const timeZone = document.querySelector('.timezone');
     timeZone.innerHTML = `${hour}:${minute} ${timeOfDay}<span class="est">EST</span>`
 }
+
+
+
+function introAnim() {
+    const tl = gsap.timeline();
+    tl.set('.line', {
+        bottom: 0,
+        height: 0,
+        top: '60vh',
+    })
+    tl.to('.line', {
+       height: '40vh',
+       duration: 2,
+       ease: 'power4.inOut'
+    })
+    tl.set('.line', {
+        top: 'initial'
+    })
+    tl.to('.line', {
+        height: '7vh',
+        duration: 1.7,
+        ease: 'power4.inOut'
+    })
+}
+
+

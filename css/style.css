@@ -39,6 +39,8 @@ body {
     font-family: 'Neue Haas Grotesk';
     font-size: var(--body-txt);
     color: var(--black);
+
+    overflow-x: hidden;
 }
 
 a {
@@ -135,6 +137,8 @@ span {
     height: 7vh;
     background-color: black;
 }
+
+
 
 .horizontal-line {
     position: absolute;
@@ -313,6 +317,18 @@ h4 {
     display: none;
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
