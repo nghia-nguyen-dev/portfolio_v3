@@ -35,7 +35,6 @@ scrollGrp.addEventListener('click', function(e) {
             introAnim();
             isDone = true
         }
-        displayMainAndLine();
         removeProject();
         displayProject(e);
     }
@@ -81,10 +80,10 @@ function next() {
 
 function displayMainAndLine() {
     const main = document.querySelector('main');
-    const line = document.querySelector('.line');
+    // const line = document.querySelector('.line');
     
     main.style.display = 'block';
-    line.style.display = 'block';
+    // line.style.display = 'block';
     controls.style.display = 'flex'
 }
 
@@ -175,6 +174,7 @@ function introAnim() {
         bottom: 0,
         height: 0,
         top: '60vh',
+        display: 'block'
     })
     tl.to('.line', {
        height: '40vh',
@@ -190,5 +190,4 @@ function introAnim() {
         ease: 'power4.inOut'
     })
 }
-
 
