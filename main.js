@@ -6,25 +6,22 @@ const projects = [...document.querySelectorAll('.work')]
 
 let counter = '';
 
+// ------------------------ INIT ------------------------
+
+
+updateTime();
+setInterval(updateTime, 60000);
+
 
 // ------------------------ EVENT LISTENERS ------------------------
 
 scrollGrp.addEventListener('click', function(e) {
    
-
-
     if (e.target.classList.contains('loop-container')) {
-        
-
-
         removeCard();
         displayCard(e);
         removeSelectedText();
         selectedTextLine(e);
-
-
-
-        
     }
 
     if (e.target.classList.contains('x-icon')) {
@@ -76,10 +73,6 @@ function next() {
         projects[counter].style.display = 'block';
     }
 }
-
-
-
-
 
 function displayMainAndLine() {
     const main = document.querySelector('main');
@@ -168,6 +161,3 @@ function updateTime() {
     const timeZone = document.querySelector('.timezone');
     timeZone.innerHTML = `${hour}:${minute} ${timeOfDay}<span class="est">EST</span>`
 }
-
-updateTime();
-setInterval(updateTime, 60000);
