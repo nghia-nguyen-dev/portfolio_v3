@@ -39,8 +39,8 @@ body {
     font-family: 'Neue Haas Grotesk';
     font-size: var(--body-txt);
     color: var(--black);
-
     overflow-x: hidden;
+
 }
 
 a {
@@ -138,8 +138,6 @@ span {
     background-color: black;
 }
 
-
-
 .horizontal-line {
     position: absolute;
     width: 4vw;
@@ -166,7 +164,6 @@ span {
     padding-right: 14px;
     z-index: 1;
     display: none;
-
     box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.2);
 }
 
@@ -205,7 +202,6 @@ h1.my-name {
     opacity: .5;
     transition: opacity .35s ease;
 }
-
 
 .x-icon:hover {
     opacity: 1;
@@ -319,12 +315,22 @@ h4 {
 }
 
 
+/****************** CUSTOM POINTER ******************/
 
 
+.cursor {
+    width: .6rem;
+    height: .6rem;
+    background-color: var(--tan);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
 
-
-
-
+    z-index: 10;
+    transition: transform .5s ease;
+}
 
 
 

@@ -1,6 +1,7 @@
 const scrollGrp = document.querySelector('.scroll-grp');
 const header = document.querySelector('header');
 const controls = document.querySelector('.controls');
+const mouseCursor = document.querySelector('.cursor');
 
 const projects = [...document.querySelectorAll('.work')]
 
@@ -23,6 +24,7 @@ scrollGrp.addEventListener('click', function(e) {
         displayCard(e);
         removeSelectedText();
         selectedTextLine(e);
+       
     }
 
     if (e.target.classList.contains('x-icon')) {
@@ -51,6 +53,11 @@ controls.addEventListener('click', function(e) {
         }
     }
 
+})
+
+window.addEventListener('mousemove', function(e) {
+    mouseCursor.style.top = `${e.pageY}px`;
+    mouseCursor.style.left = `${e.pageX}px`;
 })
 
 
@@ -190,4 +197,5 @@ function introAnim() {
         ease: 'power4.inOut'
     })
 }
+
 
