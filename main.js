@@ -10,7 +10,6 @@ let isDone = false;
 
 // ------------------------ INIT ------------------------
 
-
 updateTime();
 setInterval(updateTime, 60000);
 
@@ -36,6 +35,9 @@ scrollGrp.addEventListener('click', function(e) {
         if (isDone === false) {
             introAnim();
             isDone = true
+
+            displayMain()
+            displayControls()
         }
         removeProject();
         displayProject(e);
@@ -44,7 +46,6 @@ scrollGrp.addEventListener('click', function(e) {
 })
 
 controls.addEventListener('click', function(e) {
-  
     if (e.target.className === 'arrow') {
         if (e.target.dataset.arrow === 'left') {
             prev();
@@ -52,12 +53,6 @@ controls.addEventListener('click', function(e) {
             next();
         }
     }
-
-})
-
-window.addEventListener('mousemove', function(e) {
-    mouseCursor.style.top = `${e.pageY}px`;
-    mouseCursor.style.left = `${e.pageX}px`;
 })
 
 
@@ -85,12 +80,12 @@ function next() {
     }
 }
 
-function displayMainAndLine() {
+function displayMain() {
     const main = document.querySelector('main');
-    // const line = document.querySelector('.line');
-    
     main.style.display = 'block';
-    // line.style.display = 'block';
+}
+
+function displayControls() {
     controls.style.display = 'flex'
 }
 
@@ -157,13 +152,17 @@ function getPmOrAm () {
 
 function updateTime() {
     const today = new Date();
-    let hour = today.getHours() - 12;
+    let hour = today.getHours();
     let minute = today.getMinutes();
     const timeOfDay = getPmOrAm();
 
-    if (hour <= 0) {
-        hour = hour * -1;
+    if (hour > 12) {
+        hour = hour - 12;
     }
+
+    // if (hour <= 0) {
+    //     hour = hour * -1;
+    // }
 
     if (minute < 10) {
         minute = `0${minute}`

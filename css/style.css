@@ -314,29 +314,13 @@ h4 {
   
 }
 
-
-/****************** CUSTOM POINTER ******************/
-
-
-.cursor {
-    width: .6rem;
-    height: .6rem;
-    background-color: var(--tan);
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    mix-blend-mode: difference;
-
-    z-index: 10;
-    transition: transform .5s ease;
+/* .loop-container:hover .loop-container__text {
+    animation-duration: 20s;
 }
 
-
-
-
-
-
+.loop-container:hover .loop-container__text.selected-txt {
+    animation-duration: 10s;
+} */
 
 /****************************************** MEDIA QUERIES ******************************************/
 
