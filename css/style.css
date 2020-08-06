@@ -85,10 +85,6 @@ header {
 .loop-container__text--backwards {
     animation: textLoopBackwards 10s linear infinite;
 }
-  
-.loop-container--hover {
-    color: var(--black);
-}
 
 .loop-container__text,
 span {
@@ -176,6 +172,12 @@ span {
     margin-bottom: 2px;
     cursor: pointer;
     width: max-content;
+    transition: opacity .2s ease;
+}
+
+p.card-info__work:hover,
+p.card-info__contact:hover {
+    opacity: .5;
 }
 
 .card-info--about p {
@@ -199,12 +201,11 @@ h1.my-name {
     position: absolute;
     bottom: 14px;
     right: 14px;
-    opacity: .5;
-    transition: opacity .35s ease;
+    transition: opacity .2s ease;
 }
 
 .x-icon:hover {
-    opacity: 1;
+    opacity: .5;
 }
 
 h2 {
@@ -286,8 +287,13 @@ h4 {
    box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+.view-btn:hover a {
+    opacity: .5;
+}
+
 .view-btn a {
     margin: auto;
+    transition: .35s ease;
 }
 
 .up {
@@ -311,16 +317,9 @@ h4 {
 
 .email--short {
     display: none;
-  
 }
 
-/* .loop-container:hover .loop-container__text {
-    animation-duration: 20s;
-}
 
-.loop-container:hover .loop-container__text.selected-txt {
-    animation-duration: 10s;
-} */
 
 /****************************************** MEDIA QUERIES ******************************************/
 
