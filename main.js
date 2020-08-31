@@ -38,6 +38,8 @@ scrollGrp.addEventListener('click', function(e) {
 
             displayMain()
             displayControls()
+        } else {
+            scrollToMain();
         }
         removeProject();
         displayProject(e);
@@ -52,12 +54,21 @@ controls.addEventListener('click', function(e) {
         } else {
             next();
         }
+        setTimeout(scrollToMain, 25)
     }
 })
 
 
 
 // ------------------------ FUNCTIONS ------------------------
+function scrollToMain() {
+    const main = document.querySelector('main');
+    main.scrollIntoView(
+        {
+            behavior: 'smooth'
+        });
+}
+
 
 function prev() {
     if (counter === 0) {
