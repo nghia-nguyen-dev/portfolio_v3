@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Druk Wide Medium';
+    src: url(../fonts/Druk-Wide-Medium.otf);
+}
+
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-weight: 400;
+    src: url(../fonts/NHaasGroteskTXPro-55Rg.otf);
+}
+
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-weight: 700;
+    src: url(../fonts/NHaasGroteskTXPro-75Bd.otf);
+}

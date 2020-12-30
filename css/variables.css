@@ -1,0 +1,15 @@
+:root {
+    /* colors */
+    --tan: #F8F9F2;
+    --light-grey: hsl(60, 12%, 82%);
+    --dark-grey: hsl(70, 4%, 55%);
+    --black: #121409;
+
+    /* text-styles */
+    --body-txt: 18px;
+    --scroll-txt-size: clamp(40px, 6vw, 120px);
+    --letter-spacing: -1px;
+
+    /* general */
+    --span-gap: clamp(15px, 2.3vw, 40px);
+}

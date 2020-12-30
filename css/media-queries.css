@@ -1,0 +1,50 @@
+@media (max-width: 1024px) {
+	.email--short {
+		display: block;
+	}
+	.email--long {
+		display: none;
+	}
+
+	.card-info {
+		min-height: initial;
+		min-width: max-content;
+
+		width: 200px;
+		height: 295px;
+	}
+}
+
+@media (max-width: 768px) {
+	:root {
+		--body-txt: 14px;
+	}
+
+	.work__content {
+		max-width: 400px;
+		line-height: 22px;
+	}
+
+	.alignment {
+		margin-bottom: 10vw;
+	}
+
+	.work__side-info {
+		margin-top: 14vw;
+	}
+
+	.work__content {
+		margin-bottom: 28vw;
+	}
+
+	.card-info {
+		width: 170px;
+		height: 246px;
+		padding-left: 12px;
+		padding-top: 32px;
+	}
+
+	.x-icon {
+		width: 14px;
+	}
+}
