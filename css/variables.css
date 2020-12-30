@@ -11,5 +11,5 @@
     --letter-spacing: -1px;
 
     /* general */
-    --span-gap: clamp(15px, 2.3vw, 40px);
+    --span-gap: clamp(15px, 1.8vw, 30px);
 }
