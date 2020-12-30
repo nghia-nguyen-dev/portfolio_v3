@@ -2,35 +2,28 @@ const scrollGrp = document.querySelector('.scroll-grp');
 const header = document.querySelector('header');
 const controls = document.querySelector('.controls');
 const mouseCursor = document.querySelector('.cursor');
-
 const projects = [...document.querySelectorAll('.work')]
 
 let counter = '';
 let isDone = false;
 
-// ------------------------ INIT ------------------------
-
-updateTime();
-setInterval(updateTime, 60000);
-
-
 // ------------------------ EVENT LISTENERS ------------------------
 
-scrollGrp.addEventListener('click', function(e) {
-   
+scrollGrp.addEventListener('click', function (e) {
+
     if (e.target.classList.contains('loop-container')) {
         removeCard();
         displayCard(e);
         removeSelectedText();
         selectedTextLine(e);
-       
+
     }
 
     if (e.target.classList.contains('x-icon')) {
         removeCard();
         removeSelectedText();
     }
-   
+
     if (e.target.classList.contains('card-info__work')) {
         if (isDone === false) {
             introAnim();
@@ -47,7 +40,7 @@ scrollGrp.addEventListener('click', function(e) {
 
 })
 
-controls.addEventListener('click', function(e) {
+controls.addEventListener('click', function (e) {
     if (e.target.className === 'arrow') {
         if (e.target.dataset.arrow === 'left') {
             prev();
@@ -58,8 +51,6 @@ controls.addEventListener('click', function(e) {
     }
 })
 
-
-
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
     const main = document.querySelector('main');
@@ -68,7 +59,6 @@ function scrollToMain() {
             behavior: 'smooth'
         });
 }
-
 
 function prev() {
     if (counter === 0) {
@@ -113,7 +103,7 @@ function displayProject(e) {
 }
 
 
-function selectedTextLine (e) {
+function selectedTextLine(e) {
     const loopContainerTxts = [...e.target.children];
     loopContainerTxts.forEach(each => {
         each.classList.add('selected-txt');
@@ -150,41 +140,6 @@ function removeCard() {
     }
 }
 
-
-function getPmOrAm () {
-    const today = new Date();
-    const hour = today.getHours();
-    if (hour >= 12) {
-        return 'PM'
-    } else {
-        return 'AM'
-    }
-}
-
-function updateTime() {
-    const today = new Date();
-    let hour = today.getHours();
-    let minute = today.getMinutes();
-    const timeOfDay = getPmOrAm();
-
-    if (hour > 12) {
-        hour = hour - 12;
-    }
-
-    // if (hour <= 0) {
-    //     hour = hour * -1;
-    // }
-
-    if (minute < 10) {
-        minute = `0${minute}`
-    }
-
-    const timeZone = document.querySelector('.timezone');
-    timeZone.innerHTML = `${hour}:${minute} ${timeOfDay}<span class="est">EST</span>`
-}
-
-
-
 function introAnim() {
     const tl = gsap.timeline();
     tl.set('.line', {
@@ -194,9 +149,9 @@ function introAnim() {
         display: 'block'
     })
     tl.to('.line', {
-       height: '40vh',
-       duration: 2,
-       ease: 'power4.inOut'
+        height: '40vh',
+        duration: 2,
+        ease: 'power4.inOut'
     })
     tl.set('.line', {
         top: 'initial'
