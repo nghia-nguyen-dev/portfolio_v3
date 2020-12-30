@@ -7,7 +7,7 @@
 
     /* text-styles */
     --body-txt: 18px;
-    --scroll-txt-size: clamp(40px, 6vw, 120px);
+    --scroll-txt-size: clamp(40px, 7vw, 120px);
     --letter-spacing: -1px;
 
     /* general */
