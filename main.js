@@ -1,166 +1,159 @@
-const scrollGrp = document.querySelector('.scroll-grp');
-const header = document.querySelector('header');
-const controls = document.querySelector('.controls');
-const mouseCursor = document.querySelector('.cursor');
-const projects = [...document.querySelectorAll('.work')]
+const scrollGrp = document.querySelector(".scroll-grp");
+const header = document.querySelector("header");
+const controls = document.querySelector(".controls");
+const mouseCursor = document.querySelector(".cursor");
+const projects = [...document.querySelectorAll(".work")];
 
-let counter = '';
+let counter = "";
 let isDone = false;
 
 // ------------------------ EVENT LISTENERS ------------------------
 
-scrollGrp.addEventListener('click', function (e) {
+scrollGrp.addEventListener("click", function (e) {
+	if (e.target.classList.contains("loop-container")) {
+		removeCard();
+		displayCard(e);
+		removeSelectedText();
+		selectedTextLine(e);
+	}
 
-    if (e.target.classList.contains('loop-container')) {
-        removeCard();
-        displayCard(e);
-        removeSelectedText();
-        selectedTextLine(e);
+	if (e.target.classList.contains("x-icon")) {
+		removeCard();
+		removeSelectedText();
+	}
 
-    }
+	if (e.target.classList.contains("card-info__work")) {
+		if (isDone === false) {
+			introAnim();
+			isDone = true;
 
-    if (e.target.classList.contains('x-icon')) {
-        removeCard();
-        removeSelectedText();
-    }
+			displayMain();
+			displayControls();
+		} else {
+			scrollToMain();
+		}
+		removeProject();
+		displayProject(e);
+	}
+});
 
-    if (e.target.classList.contains('card-info__work')) {
-        if (isDone === false) {
-            introAnim();
-            isDone = true
-
-            displayMain()
-            displayControls()
-        } else {
-            scrollToMain();
-        }
-        removeProject();
-        displayProject(e);
-    }
-
-})
-
-controls.addEventListener('click', function (e) {
-    if (e.target.className === 'arrow') {
-        if (e.target.dataset.arrow === 'left') {
-            prev();
-        } else {
-            next();
-        }
-        setTimeout(scrollToMain, 25)
-    }
-})
+controls.addEventListener("click", function (e) {
+	if (e.target.className === "arrow") {
+		if (e.target.dataset.arrow === "left") {
+			prev();
+		} else {
+			next();
+		}
+		setTimeout(scrollToMain, 25);
+	}
+});
 
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
-    const main = document.querySelector('main');
-    main.scrollIntoView(
-        {
-            behavior: 'smooth'
-        });
+	const main = document.querySelector("main");
+	main.scrollIntoView({
+		behavior: "smooth",
+	});
 }
 
 function prev() {
-    if (counter === 0) {
-        return
-    } else {
-        removeProject();
-        counter = counter - 1;
-        projects[counter].style.display = 'block';
-    }
+	if (counter === 0) {
+		return;
+	} else {
+		removeProject();
+		counter = counter - 1;
+		projects[counter].style.display = "block";
+	}
 }
 
 function next() {
-    if (counter === projects.length - 1) {
-        console.log('object');
-        return
-    } else {
-        removeProject();
-        counter = counter + 1;
-        projects[counter].style.display = 'block';
-    }
+	if (counter === projects.length - 1) {
+		console.log("object");
+		return;
+	} else {
+		removeProject();
+		counter = counter + 1;
+		projects[counter].style.display = "block";
+	}
 }
 
 function displayMain() {
-    const main = document.querySelector('main');
-    main.style.display = 'block';
+	const main = document.querySelector("main");
+	main.style.display = "block";
 }
 
 function displayControls() {
-    controls.style.display = 'flex'
+	controls.style.display = "flex";
 }
 
 function removeProject() {
-    projects.forEach(proj => {
-        proj.style.display = '';
-    })
+	projects.forEach((proj) => {
+		proj.style.display = "";
+	});
 }
 
 function displayProject(e) {
-    const currentProject = parseInt(e.target.dataset.project);
-    counter = currentProject;
-    projects[currentProject].style.display = 'block';
+	const currentProject = parseInt(e.target.dataset.project);
+	counter = currentProject;
+	projects[currentProject].style.display = "block";
 }
 
-
 function selectedTextLine(e) {
-    const loopContainerTxts = [...e.target.children];
-    loopContainerTxts.forEach(each => {
-        each.classList.add('selected-txt');
-    })
+	const loopContainerTxts = [...e.target.children];
+	loopContainerTxts.forEach((each) => {
+		each.classList.add("selected-txt");
+	});
 }
 
 function displayCard(e) {
-    const activeCard = e.target.lastElementChild;
-    activeCard.classList.add('card-active')
+	const activeCard = e.target.lastElementChild;
+	activeCard.classList.add("card-active");
 
-    let mouseX = e.clientX;
-    const mouseY = e.clientY;
+	let mouseX = e.clientX;
+	const mouseY = e.clientY;
 
-    // safeguard for info card from appearing off frame if clicked close to left edge
-    if (mouseX > window.innerWidth - e.target.lastElementChild.offsetWidth) {
-        mouseX = (window.innerWidth - e.target.lastElementChild.offsetWidth) - 20;
-    }
+	// safeguard for info card from appearing off frame if clicked close to left edge
+	if (mouseX > window.innerWidth - e.target.lastElementChild.offsetWidth) {
+		mouseX = window.innerWidth - e.target.lastElementChild.offsetWidth - 20;
+	}
 
-    activeCard.style.left = `${mouseX}px`;
-    activeCard.style.top = `${mouseY}px`;
+	activeCard.style.left = `${mouseX}px`;
+	activeCard.style.top = `${mouseY}px`;
 }
 
 function removeSelectedText() {
-    const selectedTxt = [...document.querySelectorAll('.selected-txt')];
-    selectedTxt.forEach(each => {
-        each.classList.remove('selected-txt');
-    })
+	const selectedTxt = [...document.querySelectorAll(".selected-txt")];
+	selectedTxt.forEach((each) => {
+		each.classList.remove("selected-txt");
+	});
 }
 
 function removeCard() {
-    const activeCard = document.querySelector('.card-active');
-    if (activeCard) {
-        activeCard.classList.remove('card-active');
-    }
+	const activeCard = document.querySelector(".card-active");
+	if (activeCard) {
+		activeCard.classList.remove("card-active");
+	}
 }
 
 function introAnim() {
-    const tl = gsap.timeline();
-    tl.set('.line', {
-        bottom: 0,
-        height: 0,
-        top: '60vh',
-        display: 'block'
-    })
-    tl.to('.line', {
-        height: '40vh',
-        duration: 2,
-        ease: 'power4.inOut'
-    })
-    tl.set('.line', {
-        top: 'initial'
-    })
-    tl.to('.line', {
-        height: '7vh',
-        duration: 1.7,
-        ease: 'power4.inOut'
-    })
+	const tl = gsap.timeline();
+	tl.set(".line-anim", {
+		bottom: 0,
+		height: 0,
+		top: "60vh",
+		display: "block",
+	});
+	tl.to(".line-anim", {
+		height: "40vh",
+		duration: 2,
+		ease: "power4.inOut",
+	});
+	tl.set(".line-anim", {
+		top: "initial",
+	});
+	tl.to(".line-anim", {
+		height: "7vh",
+		duration: 1.7,
+		ease: "power4.inOut",
+	});
 }
-
-

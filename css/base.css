@@ -54,10 +54,6 @@ span {
 	pointer-events: none;
 }
 
-.name {
-	margin-bottom: 2px;
-}
-
 .selected-txt {
 	animation-play-state: paused;
 	color: var(--black);
@@ -71,9 +67,9 @@ span {
 	animation-duration: 20s;
 }
 
-.info {
-	padding-left: 26vw;
-	padding-right: 7vw;
+.copyright {
+	padding-left: 24vw;
+	padding-right: 10vw;
 	padding-top: 20px;
 	display: flex;
 	font-size: 11px;
@@ -88,13 +84,9 @@ span {
 	display: flex;
 }
 
-.coordinates p:first-child {
-	margin-right: 32px;
-}
-
-.line {
+.line-anim {
 	position: absolute;
-	left: 26vw;
+	left: 24vw;
 	bottom: 0;
 	width: 1px;
 	height: 7vh;
@@ -135,28 +127,8 @@ span {
 	-webkit-text-stroke-color: black;
 }
 
-.card-info p {
-	margin-bottom: 2px;
-	cursor: pointer;
-	width: max-content;
-	transition: opacity 0.2s ease;
-}
-
-p.card-info__work:hover,
-p.card-info__contact:hover {
-	opacity: 0.5;
-}
-
-.card-info--about p {
-	cursor: initial;
-}
-
 .card-active {
 	display: block;
-}
-
-.social-media {
-	margin-top: 24.5px;
 }
 
 .x-icon {
@@ -167,8 +139,16 @@ p.card-info__contact:hover {
 	transition: opacity 0.2s ease;
 }
 
-.x-icon:hover {
+.card-info__work,
+.card-info__contact {
+	transition: opacity 0.2s ease;
+}
+
+.x-icon:hover,
+.card-info--about li:hover,
+.card-info__work:hover {
 	opacity: 0.5;
+	cursor: pointer;
 }
 
 h2 {
@@ -196,7 +176,7 @@ h4 {
 .work {
 	max-width: 1920px;
 	padding-top: clamp(100px, 32vw, 375px);
-	padding-left: 26vw;
+	padding-left: 24vw;
 	padding-right: 4vw;
 }
 
@@ -229,7 +209,7 @@ h4 {
 }
 
 .work,
-.line {
+.line-anim {
 	display: none;
 }
 
@@ -276,10 +256,6 @@ h4 {
 
 .arrow {
 	cursor: pointer;
-}
-
-.email--short {
-	display: none;
 }
 
 .mov {

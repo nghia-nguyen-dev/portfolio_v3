@@ -1,11 +1,5 @@
 @media (max-width: 1024px) {
-	.email--short {
-		display: block;
-	}
-	.email--long {
-		display: none;
-	}
-
+	
 	.card-info {
 		min-height: initial;
 		min-width: max-content;

@@ -12,15 +12,15 @@
 <body>
    
     <header>
-        <div class="info">
+        <div class="copyright">
             <p>©ALL RIGHTS RESERVED</p>
             <div class="coordinates">
-                <p class="north">42.6334° N</p>
-                <p class="west">71.3162° W</p>
+                <p>42.6334° N</p>
+                <p>/ 71.3162° W</p>
             </div>
         </div>
 
-        <div class="line"></div>
+        <div class="line-anim"></div>
 
         <div class="scroll-grp">
             <div class="loop-container" data-row='about'>
@@ -35,14 +35,15 @@
                 </div>
            
                 <div class="card-info card-info--about">
-                    <h1 class="name">Nghia Nguyen</h1>
-                    <p>Front-end dev</p><br>
-                    <div class="social-media">
-                        <p class="card-info__contact"><a class="email" href="mailto:hello.nghia22@gmail.com">Email</a></p>
-                        <p class="card-info__contact"><a href="https://github.com/nghia-nguyen-dev" target="_blank">Github</a></p>
-                        <p class="card-info__contact"><a href="https://www.linkedin.com/in/nghia-nguyen-5a2b2a128/" target="_blank">LinkedIn</a></p>
-                        <p class="card-info__contact"><a href="https://dribbble.com/nghia_n" target="_blank">Dribbble</a></p>
-                    </div>
+                    <h1>Nghia Nguyen</h1>
+                    <p>Front-end dev</p>
+                    <br>
+                    <ul>
+                        <li class="card-info__contact"><a href="mailto:hello.nghia22@gmail.com">Email</a></li>
+                        <li class="card-info__contact"><a href="https://github.com/nghia-nguyen-dev" target="_blank">Github</a></li>
+                        <li class="card-info__contact"><a href="https://www.linkedin.com/in/nghia-nguyen-5a2b2a128/" target="_blank">LinkedIn</a></li>
+                        <li class="card-info__contact"><a href="https://dribbble.com/nghia_n" target="_blank">Dribbble</a></li>
+                    </ul>
                     <img class="x-icon" src="assets/icons/x.svg" alt="close icon">
                 </div>
             </div>
@@ -58,17 +59,20 @@
                     <span>work</span><span>work</span><span>work</span>
                 </div>
                 
-                <div class="card-info">
-                    <p class="card-info__work" data-project='0'>Bohan Phoenix</p>
-                    <p class="card-info__work" data-project='1'>Fun w Dumb</p>
-                    <p class="card-info__work" data-project='2'>Portfolio</p>
-                    <p class="card-info__work" data-project='3'>Freebird</p>
-                    <p class="card-info__work" data-project='4'>Experiments</p>
+                <div class="card-info card-info--work">
+                    <ul>
+                        <li class="card-info__work" data-project='0'>Bohan Phoenix</li>
+                        <li class="card-info__work" data-project='1'>Fun w Dumb</li>
+                        <li class="card-info__work" data-project='2'>Portfolio</li>
+                        <li class="card-info__work" data-project='3'>Freebird</li>
+                        <li class="card-info__work" data-project='4'>Experiments</li>
+                    </ul>
                     <img class="x-icon" src="assets/icons/x.svg" alt="close icon">
                 </div>
 
             </div>
-            <div class="loop-container" data-row='contact'>
+            
+            <div class="loop-container" data-row='skills'>
                 <div class="loop-container__text">
                     <span>skills</span><span>skills</span><span>skills</span>
                 </div>
@@ -83,7 +87,8 @@
                         <li>HTML</li>
                         <li>CSS/SASS</li>
                         <li>Javascript</li>
-                    </ul><br>
+                    </ul>
+                    <br>
                     <ul>
                         <li>Git/ Github</li>
                         <li>Node.js</li>
@@ -99,7 +104,7 @@
 
     <main id="something">
 
-        <div class="work work--bp">
+        <div class="work">
             <div class="work__content">
                 <div class="alignment">
                     <h2>01.</h2>
@@ -121,7 +126,7 @@
             </div>
         </div>
 
-        <div class="work work--fwd">
+        <div class="work">
             <div class="work__content">
                 <div class="alignment">
                     <h2>02.</h2>
@@ -146,7 +151,7 @@
         </div>
 
 
-        <div class="work work--portfolio">
+        <div class="work">
             <div class="work__content">
                 <div class="alignment">
                     <h2>03.</h2>
@@ -170,7 +175,7 @@
             </div>
         </div>
 
-        <div class="work work--freebird">
+        <div class="work">
             <div class="work__content">
                 <div class="alignment">
                     <h2>04.</h2>
@@ -194,7 +199,7 @@
             </div>
         </div>
 
-        <div class="work work--experiments">
+        <div class="work">
             <div class="work__content">
                 <div class="alignment">
                     <h2>05.</h2>
