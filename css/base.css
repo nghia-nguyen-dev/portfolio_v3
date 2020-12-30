@@ -1,61 +1,411 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, p {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  /* border: 1px solid salmon; */
+@font-face {
+    font-family: 'Druk Wide Medium';
+    src: url(../fonts/Druk-Wide-Medium.otf);
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-weight: 400;
+    src: url(../fonts/NHaasGroteskTXPro-55Rg.otf);
 }
+
+@font-face {
+    font-family: 'Neue Haas Grotesk';
+    font-weight: 700;
+    src: url(../fonts/NHaasGroteskTXPro-75Bd.otf);
+}
+
+
+/****************************************** VARIABLES ******************************************/
+
+:root {
+    /* colors */
+    --tan: #F8F9F2;
+    --light-grey: hsl(60, 12%, 82%);
+    --dark-grey: hsl(70, 4%, 55%);
+    --black: #121409;
+
+    /* text-styles */
+    --body-txt: 18px;
+    --scroll-txt-size: clamp(40px, 6vw, 120px);
+    --letter-spacing: -1px;
+
+    /* general */
+    --span-gap: clamp(15px, 2.3vw, 40px);
+}
+
 body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    background-color: var(--tan);
+    font-family: 'Neue Haas Grotesk';
+    font-size: var(--body-txt);
+    color: var(--black);
+    overflow-x: hidden;
+  
 }
 
-img, iframe {
-  vertical-align: bottom;
-  max-width: 100%;
+a {
+    text-decoration: none;
+    color: var(--tan);
 }
 
-input, textarea, select {
-  font: inherit;
+header {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+.scroll-grp {
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+    font-family: 'Druk Wide Medium';
+    color: var(--light-grey);
+    margin-top: clamp(60px, 10vw, 132px);
+    line-height: .8;
 }
+
+.loop-container {
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 1.2vw;
+}
+
+.loop-container__text {
+    animation: textLoop 10s linear infinite;
+    font-size: var(--scroll-txt-size);
+}
+
+.loop-container__text span {
+    margin-right: var(--span-gap);
+    cursor: pointer;
+    transition: color .35s ease;
+}
+  
+.loop-container__text--backwards {
+    animation: textLoopBackwards 10s linear infinite;
+}
+
+.loop-container__text,
+span {
+    pointer-events: none;
+}
+
+.selected-txt {
+    animation-play-state: paused;
+    color: var(--black);
+}
+
+.loop-container:hover {
+    color: var(--dark-grey);
+}
+
+.slow-anim {
+    animation-duration: 20s;
+}
+
+.info {
+    padding-left: 26vw;
+    padding-right: 7vw;
+    padding-top: 20px;
+    display: flex;
+    font-size: 11px;
+    justify-content: space-between;
+}
+
+.est {
+    margin-left: 8px;
+}
+
+.coordinates {
+    display: flex;
+}
+
+.coordinates p:first-child {
+    margin-right: 32px;
+}
+
+.line {
+    position: absolute;
+    left: 26vw;
+    bottom: 0;
+    width: 1px;
+    height: 7vh;
+    background-color: black;
+}
+
+.horizontal-line {
+    position: absolute;
+    width: 4vw;
+    height: 1px;
+    background-color: black;
+    right: 0;
+}
+
+.card-info {
+    cursor: initial;
+    position: relative;
+    letter-spacing: 0;
+    text-transform: initial;
+    font-family: 'Neue Haas Grotesk';
+    position: absolute;
+    color: var(--tan);
+    line-height: normal;
+    background-color: black;
+    border-radius: 16px;
+    min-height: 343px;
+    min-width: 220px;
+    padding-top: 36px;
+    padding-left: 16px;
+    padding-right: 14px;
+    z-index: 1;
+    display: none;
+    box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.2);
+}
+
+.txt-outline {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.card-info p {
+    margin-bottom: 2px;
+    cursor: pointer;
+    width: max-content;
+    transition: opacity .2s ease;
+}
+
+p.card-info__work:hover,
+p.card-info__contact:hover {
+    opacity: .5;
+}
+
+.card-info--about p {
+    cursor: initial;
+}
+
+.card-active {
+    display: block;
+}
+
+.social-media {
+    margin-top: 24.5px;
+}
+
+h1.my-name {
+    margin-bottom: 24.5px;
+}
+
+.x-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    transition: opacity .2s ease;
+}
+
+.x-icon:hover {
+    opacity: .5;
+}
+
+h2 {
+    font-family: 'Druk Wide Medium';
+    font-size: var(--scroll-txt-size);
+    position: absolute;
+    left: -3.2vw;
+}
+
+h2,
+h4 {
+    line-height: .76;
+}
+
+.alignment {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 108px;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+.work {
+    max-width: 1920px;
+    padding-top: clamp(100px, 32vw, 375px);
+    padding-left: 26vw;
+    padding-right: 4vw;
+}
+
+.work__content {
+    max-width: 607px;
+    line-height: 27px;
+    margin-bottom: 324px;
+}
+
+.work__side-info {
+    margin-top: 162px;
+    display: flex;
+    opacity: .35;
+}
+
+.work__side-info p:first-child {
+    margin-right: 140px;
+}
+
+.work__side-info span {
+    margin-left: 12px;
+}
+
+.work__images img {
+    margin-bottom: 5vw;
+}
+
+.work__images img:last-child {
+    margin-bottom: 0;
+}
+
+.work,
+.line {
+    display: none;
+}
+
+.view-btn {
+    background-color: var(--black);
+    height: 85px;
+    width: 85px;
+    display: flex;
+    border-radius: 50%;
+    position: sticky;
+    top: 80vh;
+    transform: translate(clamp(300px,56vw, 910px), 50%);
+    transition: .35s ease;
+}
+
+.view-btn:hover {
+   background-color: var(--black);
+   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.view-btn:hover a {
+    opacity: .5;
+}
+
+.view-btn a {
+    margin: auto;
+    transition: .35s ease;
+}
+
+.up {
+    color: var(--black);
+}
+
+.controls {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    max-width: 1920px;
+    margin-top: 210px;
+    margin-bottom: 100px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.email--short {
+    display: none;
+}
+
+.mov {
+    max-width: 100%;
+    margin-bottom: 5vw;
+}
+
+
+/****************************************** MEDIA QUERIES ******************************************/
+
+@media (max-width: 1024px) {
+
+    .email--short {
+        display: block;
+    }
+    .email--long {
+        display: none;
+    }
+
+    .card-info {
+        min-height: initial;
+        min-width: max-content;
+
+        width: 200px;
+        height: 295px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    :root {
+        --body-txt: 14px;
+    }
+
+    .work__content {
+        max-width: 400px;
+        line-height: 22px;
+    }
+
+    .alignment {
+        margin-bottom: 10vw;
+    }
+
+    .work__side-info {
+        margin-top: 14vw;
+    }
+
+    .work__content {
+        margin-bottom: 28vw;
+    }
+
+    .card-info {
+        width: 170px;
+        height: 246px;
+        padding-left: 12px;
+        padding-top: 32px;
+    }
+
+    .x-icon {
+        width: 14px;
+    }
+}
+
+
+
+
+
+
+/****************************************** ANIMATION ******************************************/
+
+@keyframes textLoop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0)
+    }
+}
+
+@keyframes textLoopBackwards {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(-100%, 0, 0)
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+}
+
