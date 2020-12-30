@@ -118,7 +118,7 @@ span {
 	position: absolute;
 	color: var(--tan);
 	line-height: normal;
-	background-color: black;
+	background-color: var(--black);
 	border-radius: 16px;
 	min-height: 343px;
 	min-width: 220px;

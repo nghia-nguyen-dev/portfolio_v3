@@ -3,7 +3,7 @@
     --tan: #F8F9F2;
     --light-grey: hsl(60, 12%, 82%);
     --dark-grey: hsl(70, 4%, 55%);
-    --black: #121409;
+    --black: hsl(71, 38%, 9%);
 
     /* text-styles */
     --body-txt: 18px;
