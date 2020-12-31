@@ -22,7 +22,7 @@ scrollGrp.addEventListener("click", function (e) {
 		removeSelectedText();
 	}
 
-	if (e.target.classList.contains("card-info__work")) {
+	if (e.target.classList.contains("card-info__project")) {
 		if (isDone === false) {
 			introAnim();
 			isDone = true;

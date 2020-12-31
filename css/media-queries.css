@@ -42,3 +42,9 @@
 		width: 14px;
 	}
 }
+
+@media (max-width: 480px) {
+	.copyright {
+		display: none;
+	}
+}
