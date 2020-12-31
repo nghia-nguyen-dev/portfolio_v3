@@ -31,7 +31,7 @@ header {
 	display: flex;
 	overflow: hidden;
 	cursor: pointer;
-	margin-bottom: 1.2vw;
+	margin-bottom: 1vw;
 }
 
 .loop-container__text {
