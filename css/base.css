@@ -256,6 +256,20 @@ h4 {
 
 .arrow {
 	cursor: pointer;
+	width: 120px;
+	height: 84px;
+}
+
+.arrow__line {
+	transition: stroke-width .35s ease;
+}
+
+.arrow__color {
+	stroke: var(--black)
+}
+
+.arrow:hover .arrow__line {
+	stroke-width: 6px;
 }
 
 .mov {
