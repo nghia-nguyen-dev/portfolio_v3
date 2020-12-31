@@ -4,6 +4,7 @@
     --light-grey: hsl(60, 12%, 82%);
     --dark-grey: hsl(70, 4%, 55%);
     --black: hsl(71, 48%, 12%);
+    --box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.2);
 
     /* text-styles */
     --body-txt: 18px;

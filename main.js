@@ -152,7 +152,7 @@ function introAnim() {
 		top: "initial",
 	});
 	tl.to(".line-anim", {
-		height: "7vh",
+		height: "8vh",
 		duration: 1.7,
 		ease: "power4.inOut",
 	});
