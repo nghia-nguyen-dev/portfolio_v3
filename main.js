@@ -1,13 +1,28 @@
 const scrollGrp = document.querySelector(".scroll-grp");
 const header = document.querySelector("header");
-const controls = document.querySelector(".controls");
 const mouseCursor = document.querySelector(".cursor");
 const projects = [...document.querySelectorAll(".work")];
+
+const controls = document.querySelector(".controls");
+const leftArrow = document.querySelector('.arrow--left');
+const rightArrow = document.querySelector('.arrow--right');
 
 let counter = "";
 let isDone = false;
 
 // ------------------------ EVENT LISTENERS ------------------------
+
+rightArrow.addEventListener('click', (e) => {
+	e.preventDefault()
+	next()
+	setTimeout(scrollToMain, 0);
+})
+
+leftArrow.addEventListener('click', (e) => {
+	e.preventDefault()
+	prev()
+	setTimeout(scrollToMain, 0);
+})
 
 scrollGrp.addEventListener("click", function (e) {
 	if (e.target.classList.contains("loop-container")) {
@@ -38,14 +53,7 @@ scrollGrp.addEventListener("click", function (e) {
 });
 
 controls.addEventListener("click", function (e) {
-	if (e.target.className === "arrow") {
-		if (e.target.dataset.arrow === "left") {
-			prev();
-		} else {
-			next();
-		}
-		setTimeout(scrollToMain, 25);
-	}
+	console.log(e.target);
 });
 
 // ------------------------ FUNCTIONS ------------------------
