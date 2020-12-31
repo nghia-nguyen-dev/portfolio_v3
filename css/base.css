@@ -223,6 +223,8 @@ h4 {
 	top: 80vh;
 	transform: translate(clamp(300px, 56vw, 910px), 50%);
 	transition: 0.35s ease;
+	justify-content: center;
+	align-items: center;
 }
 
 .view-btn:hover {
