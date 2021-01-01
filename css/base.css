@@ -183,11 +183,11 @@ h4 {
 .work__content {
 	max-width: 607px;
 	line-height: 27px;
-	margin-bottom: 324px;
+	margin-bottom: 232px;
 }
 
 .work__side-info {
-	margin-top: 142px;
+	margin-top: 116px;
 	display: flex;
 	opacity: 0.35;
 }
