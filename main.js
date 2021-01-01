@@ -52,9 +52,7 @@ scrollGrp.addEventListener("click", function (e) {
 	}
 });
 
-controls.addEventListener("click", function (e) {
-	console.log(e.target);
-});
+
 
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
