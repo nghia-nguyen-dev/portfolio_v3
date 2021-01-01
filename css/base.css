@@ -166,7 +166,7 @@ h4 {
 .alignment {
 	display: flex;
 	align-items: flex-end;
-	margin-bottom: 58px;
+	margin-bottom: 54px;
 }
 
 h4 {
@@ -183,11 +183,11 @@ h4 {
 .work__content {
 	max-width: 607px;
 	line-height: 27px;
-	margin-bottom: 232px;
+	margin-bottom: 216px;
 }
 
 .work__side-info {
-	margin-top: 116px;
+	margin-top: 98px;
 	display: flex;
 	opacity: 0.35;
 }
