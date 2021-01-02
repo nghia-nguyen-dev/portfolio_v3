@@ -19,3 +19,14 @@
         transform: translate3d(0, 0, 0)
     }
 }
+
+@keyframes slideUp {
+	from {
+        -webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	to {
+        -webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+}

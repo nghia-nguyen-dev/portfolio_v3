@@ -14,6 +14,10 @@
 		--body-txt: 14px;
 	}
 
+	.up__container {
+		height: 17px;
+	}
+
 	.work__content {
 		max-width: 400px;
 		line-height: 22px;

@@ -244,6 +244,20 @@ h4 {
 
 .up {
 	color: var(--black);
+	overflow: hidden;
+	font-family: 'Druk Wide Medium';
+}
+
+.up__container {
+	height: 21px;
+}
+
+.up__text {
+	margin-bottom: 3px;
+}
+
+.up:hover .up__container {
+	animation: slideUp 1s linear infinite;
 }
 
 .controls {
