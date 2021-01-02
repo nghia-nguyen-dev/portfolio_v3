@@ -45,6 +45,15 @@
 	.x-icon {
 		width: 14px;
 	}
+
+	.view-btn {
+		height: 70px;
+		width: 70px;
+	}
+
+	.arrow__svg {
+		width: 80px;
+	}
 }
 
 @media (max-width: 480px) {
