@@ -189,15 +189,20 @@ h4 {
 .work__side-info {
 	margin-top: 98px;
 	display: flex;
-	opacity: 0.35;
 }
 
 .work__side-info p:first-child {
-	margin-right: 140px;
+	margin-right: 45px;
 }
 
 .work__side-info span {
-	margin-left: 12px;
+	opacity: .45;
+	margin-right: 12px;
+}
+
+.work__side-info a {
+	color: var(--black);
+	text-decoration: underline;
 }
 
 .work__images img {
