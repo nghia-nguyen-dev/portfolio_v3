@@ -213,6 +213,10 @@ h4 {
 	margin-bottom: 0;
 }
 
+.work__image {
+	border: .5px solid var(--black);
+}
+
 .work,
 .line-anim {
 	display: none;
