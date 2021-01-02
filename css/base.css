@@ -246,10 +246,6 @@ h4 {
 	color: var(--black);
 }
 
-.up:hover {
-	font-weight: 700;
-}
-
 .controls {
 	padding-left: 4vw;
 	padding-right: 4vw;
