@@ -183,7 +183,7 @@ h4 {
 .work__content {
 	max-width: 607px;
 	line-height: 27px;
-	margin-bottom: 216px;
+	margin-bottom: 200px;
 }
 
 .work__side-info {
@@ -254,6 +254,7 @@ h4 {
 
 .up__text {
 	margin-bottom: 3px;
+	letter-spacing: 1px;
 }
 
 .up:hover .up__container {
