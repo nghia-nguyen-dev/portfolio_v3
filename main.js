@@ -4,6 +4,7 @@ const mouseCursor = document.querySelector(".cursor");
 const projects = [...document.querySelectorAll(".work")];
 
 const controls = document.querySelector(".controls");
+const up = document.querySelector('.up');
 const leftArrow = document.querySelector('.arrow--left');
 const rightArrow = document.querySelector('.arrow--right');
 
@@ -11,6 +12,14 @@ let counter = "";
 let isDone = false;
 
 // ------------------------ EVENT LISTENERS ------------------------
+
+up.addEventListener('click', (e) => {
+	e.preventDefault()
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+})
 
 rightArrow.addEventListener('click', (e) => {
 	e.preventDefault()
