@@ -66,9 +66,7 @@ scrollGrp.addEventListener("click", function (e) {
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
 	const main = document.querySelector("main");
-	main.scrollIntoView({
-		behavior: "smooth",
-	});
+	main.scrollIntoView();
 }
 
 function prev() {
