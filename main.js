@@ -62,7 +62,6 @@ scrollGrp.addEventListener("click", function (e) {
 });
 
 
-
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
 	const main = document.querySelector("main");
