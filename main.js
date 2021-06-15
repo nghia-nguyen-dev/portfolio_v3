@@ -4,34 +4,34 @@ const mouseCursor = document.querySelector(".cursor");
 const projects = [...document.querySelectorAll(".work")];
 
 const controls = document.querySelector(".controls");
-const up = document.querySelector('.up');
-const leftArrow = document.querySelector('.arrow--left');
-const rightArrow = document.querySelector('.arrow--right');
+const up = document.querySelector(".up");
+const leftArrow = document.querySelector(".arrow--left");
+const rightArrow = document.querySelector(".arrow--right");
 
 let counter = "";
 let isDone = false;
 
 // ------------------------ EVENT LISTENERS ------------------------
 
-up.addEventListener('click', (e) => {
-	e.preventDefault()
+up.addEventListener("click", e => {
+	e.preventDefault();
 	window.scrollTo({
 		top: 0,
-		behavior: 'smooth',
+		behavior: "smooth",
 	});
-})
+});
 
-rightArrow.addEventListener('click', (e) => {
-	e.preventDefault()
-	next()
+rightArrow.addEventListener("click", e => {
+	e.preventDefault();
+	next();
 	setTimeout(scrollToMain, 0);
-})
+});
 
-leftArrow.addEventListener('click', (e) => {
-	e.preventDefault()
-	prev()
+leftArrow.addEventListener("click", e => {
+	e.preventDefault();
+	prev();
 	setTimeout(scrollToMain, 0);
-})
+});
 
 scrollGrp.addEventListener("click", function (e) {
 	if (e.target.classList.contains("loop-container")) {
@@ -60,7 +60,6 @@ scrollGrp.addEventListener("click", function (e) {
 		displayProject(e);
 	}
 });
-
 
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
@@ -99,7 +98,7 @@ function displayControls() {
 }
 
 function removeProject() {
-	projects.forEach((proj) => {
+	projects.forEach(proj => {
 		proj.style.display = "";
 	});
 }
@@ -112,7 +111,7 @@ function displayProject(e) {
 
 function selectedTextLine(e) {
 	const loopContainerTxts = [...e.target.children];
-	loopContainerTxts.forEach((each) => {
+	loopContainerTxts.forEach(each => {
 		each.classList.add("selected-txt");
 	});
 }
@@ -135,7 +134,7 @@ function displayCard(e) {
 
 function removeSelectedText() {
 	const selectedTxt = [...document.querySelectorAll(".selected-txt")];
-	selectedTxt.forEach((each) => {
+	selectedTxt.forEach(each => {
 		each.classList.remove("selected-txt");
 	});
 }
