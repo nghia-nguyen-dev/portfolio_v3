@@ -156,6 +156,7 @@ h2 {
 	font-size: var(--scroll-txt-size);
 	position: absolute;
 	left: -3.2vw;
+	opacity: .3;
 }
 
 h2,
