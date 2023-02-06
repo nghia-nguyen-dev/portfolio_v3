@@ -1,5 +1,4 @@
 @media (max-width: 1024px) {
-	
 	.card-info {
 		min-height: initial;
 		min-width: max-content;
@@ -12,6 +11,7 @@
 @media (max-width: 768px) {
 	:root {
 		--body-txt: 14px;
+		--letter-spacing: -2px;
 	}
 
 	.up__container {
@@ -36,7 +36,7 @@
 	}
 
 	.card-info {
-		width: 170px;
+		width: 160px;
 		height: 246px;
 		padding-left: 12px;
 		padding-top: 32px;
@@ -53,6 +53,10 @@
 
 	.arrow__svg {
 		width: 80px;
+	}
+
+	.work-type__dev {
+		margin-bottom: 17px;
 	}
 }
 

@@ -9,7 +9,7 @@
     /* text-styles */
     --body-txt: 18px;
     --scroll-txt-size: clamp(40px, 7vw, 120px);
-    --letter-spacing: -1px;
+    --letter-spacing: -4px;
 
     /* general */
     --span-gap: clamp(15px, 1.8vw, 30px);

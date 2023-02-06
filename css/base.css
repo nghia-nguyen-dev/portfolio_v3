@@ -31,7 +31,7 @@ header {
 	display: flex;
 	overflow: hidden;
 	cursor: pointer;
-	margin-bottom: 1vw;
+	margin-bottom: .2vw;
 }
 
 .loop-container__text {
@@ -306,4 +306,13 @@ h4 {
 .mov {
 	max-width: 100%;
 	margin-bottom: 5vw;
+}
+
+.work-type__title {
+	opacity: .5;
+	letter-spacing: .4;
+}
+
+.work-type__dev {
+	margin-bottom: 22px;
 }
