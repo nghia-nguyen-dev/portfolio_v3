@@ -116,11 +116,10 @@ span {
 	line-height: normal;
 	background-color: var(--black);
 	border-radius: 16px;
-	min-height: 343px;
+	/* min-height: 343px; */
 	min-width: 220px;
-	padding-top: 36px;
-	padding-left: 16px;
-	padding-right: 14px;
+	max-width: 430px;
+	padding: 28px 22px;
 	z-index: 1;
 	display: none;
 	box-shadow: var(--box-shadow);
@@ -310,9 +309,12 @@ h4 {
 
 .work-type__title {
 	opacity: .5;
-	letter-spacing: .4;
 }
 
 .work-type__dev {
 	margin-bottom: 22px;
+}
+
+.name {
+	margin-right: 6px;
 }
