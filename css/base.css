@@ -68,12 +68,13 @@ span {
 }
 
 .copyright {
-	padding-left: 24vw;
+	padding-left: 10vw;
 	padding-right: 10vw;
-	padding-top: 14px;
+	padding-top: 6px;
 	display: flex;
 	font-size: 10px;
 	justify-content: space-between;
+	font-weight: 600;
 }
 
 .est {
@@ -116,7 +117,7 @@ span {
 	line-height: normal;
 	background-color: var(--black);
 	border-radius: 16px;
-	/* min-height: 343px; */
+	min-height: 142px;
 	min-width: 220px;
 	max-width: 430px;
 	padding: 28px 22px;
