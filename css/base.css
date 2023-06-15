@@ -119,7 +119,7 @@ span {
 	border-radius: 16px;
 	min-height: 142px;
 	min-width: 220px;
-	max-width: 430px;
+	max-width: 400px;
 	padding: 28px 22px;
 	z-index: 1;
 	display: none;
@@ -160,7 +160,7 @@ h2 {
 	font-size: var(--scroll-txt-size);
 	position: absolute;
 	left: -3.2vw;
-	opacity: .3;
+	opacity: .2;
 }
 
 h2,
@@ -316,6 +316,7 @@ h4 {
 	margin-bottom: 22px;
 }
 
-.name {
-	margin-right: 6px;
+.case-study {
+	color: revert;
+	text-decoration: underline;
 }
