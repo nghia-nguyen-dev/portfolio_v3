@@ -47,24 +47,18 @@ scrollGrp.addEventListener("click", function (e) {
 	}
 
 	if (e.target.classList.contains("card-info__project")) {
-		if (isDone === false) {
-			introAnim();
-			isDone = true;
-
-			displayMain();
-			displayControls();
-		} else {
-			scrollToMain();
-		}
+		displayMain();
+		displayControls();
 		removeProject();
 		displayProject(e);
+		scrollToMain()
 	}
 });
 
 // ------------------------ FUNCTIONS ------------------------
 function scrollToMain() {
 	const main = document.querySelector("main");
-	main.scrollIntoView();
+	main.scrollIntoView({ behavior: 'smooth' });
 }
 
 function prev() {
