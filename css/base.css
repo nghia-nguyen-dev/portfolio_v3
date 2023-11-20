@@ -320,3 +320,7 @@ h4 {
 	color: revert;
 	text-decoration: underline;
 }
+
+.side-notes {
+	opacity: .45;
+}
