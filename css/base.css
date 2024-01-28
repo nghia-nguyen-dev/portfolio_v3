@@ -212,6 +212,7 @@ h4 {
 
 .work__images img {
 	margin-bottom: 5vw;
+	width: 100%;
 }
 
 .work__images img:last-child {
