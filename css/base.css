@@ -157,15 +157,16 @@ span {
 
 h2 {
 	font-family: "Druk Wide Medium";
-	font-size: var(--scroll-txt-size);
 	position: absolute;
 	left: -3.2vw;
 	opacity: .2;
+	display: none;
 }
 
 h2,
 h4 {
-	line-height: 0.76;
+	line-height: 0.85;
+	font-size: var(--scroll-txt-size);
 }
 
 .alignment {
@@ -176,12 +177,13 @@ h4 {
 
 h4 {
 	font-weight: 700;
+	letter-spacing: -6px;
 }
 
 .work {
 	max-width: 1920px;
 	padding-top: clamp(100px, 32vw, 375px);
-	padding-left: 24vw;
+	padding-left: 4vw;
 	padding-right: 4vw;
 }
 
@@ -236,7 +238,7 @@ h4 {
 	border-radius: 50%;
 	position: sticky;
 	top: 80vh;
-	transform: translate(clamp(300px, 56vw, 910px), 50%);
+	transform: translate(50%, 50%);
 	transition: 0.35s ease;
 	justify-content: center;
 	align-items: center;

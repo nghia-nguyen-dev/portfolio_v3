@@ -58,6 +58,10 @@
 	.work-type__dev {
 		margin-bottom: 17px;
 	}
+
+	h4 {
+		letter-spacing: -2px;
+	}
 }
 
 @media (max-width: 480px) {
