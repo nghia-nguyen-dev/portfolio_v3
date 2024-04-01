@@ -1,10 +1,8 @@
 @media (max-width: 1024px) {
 	.card-info {
 		min-height: initial;
-		min-width: max-content;
-
 		width: 200px;
-		height: 295px;
+		height: fit-content;
 	}
 }
 
@@ -37,7 +35,7 @@
 
 	.card-info {
 		width: 160px;
-		height: 246px;
+		height: fit-content;
 		padding-left: 12px;
 		padding-top: 32px;
 	}
@@ -67,5 +65,8 @@
 @media (max-width: 480px) {
 	.copyright {
 		display: none;
+	}
+	.card-info {
+		min-width: 210px;
 	}
 }
